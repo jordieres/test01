@@ -1,5 +1,5 @@
 pipeline {
-    agent anyagent {label 'docker-machine'}
+    agent {label 'docker-machine'}
     
     stages {
         stage('Build') {
