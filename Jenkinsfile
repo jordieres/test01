@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                python3 --version
-                docker --version
+                sh 'python3 --version'
+                sh 'docker --version'
             }
         }
         stage('Test') {
