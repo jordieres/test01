@@ -1,17 +1,12 @@
 pipeline {
-    agent any
-
-    environment {
-        PYENV_ROOT = '$HOME/.pyenv'
-    }
+    agent anyagent {label 'docker-machine'}
     
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'PATH="$PYENV_ROOT/bin:$PATH"'
-                sh 'eval "$(pyenv init -)"'
-                sh 'pyenv install 3.10'
+                python3 --version
+                docker --version
             }
         }
         stage('Test') {
