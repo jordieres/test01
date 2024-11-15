@@ -1,12 +1,11 @@
 pipeline {
-    agent {
-        docker { image 'python:3.10.15-alpine3.20' }
-    }
+    agent any
+    
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'pip install -r requirements-local.txt'
+                sh 'python --version'
             }
         }
         stage('Test') {
