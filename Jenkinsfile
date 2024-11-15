@@ -5,7 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'pip3 install -r requirements_local.txt'
             }
         }
         stage('Run Tests') {
