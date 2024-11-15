@@ -10,6 +10,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'curl https://pyenv.run | bash'
+                sh 'PATH="$PYENV_ROOT/bin:$PATH"'
                 sh 'eval "$(pyenv init -)"'
                 sh 'pyenv install 3.10'
             }
