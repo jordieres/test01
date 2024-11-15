@@ -9,7 +9,7 @@ pipeline {
             }
         }
         stage('Run Tests') {
-            parallel {
+            parallel (
                 failFast: true
                 "Test1" : {
                     echo 'Testing Step 1'
@@ -76,7 +76,7 @@ pipeline {
                         fi
                     '''    
                 }
-            }
+            )
         }
     }
 }
