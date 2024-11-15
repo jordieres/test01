@@ -1,11 +1,17 @@
 pipeline {
     agent any
+
+    environment {
+        PYENV_ROOT = '$HOME/.pyenv'
+    }
     
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'python --version'
+                sh 'curl https://pyenv.run | bash'
+                sh 'eval "$(pyenv init -)"'
+                sh 'pyenv install 3.10'
             }
         }
         stage('Test') {
